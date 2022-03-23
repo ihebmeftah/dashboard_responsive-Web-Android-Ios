@@ -1,3 +1,4 @@
+import 'package:dashboard/views/screens/overviewScreen.dart';
 import 'package:dashboard/views/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -10,6 +11,10 @@ class Dashboardscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.refresh),
+      ),
       body: Row(
         children: [
           menuSection(),
@@ -17,6 +22,10 @@ class Dashboardscreen extends StatelessWidget {
             flex: 4,
             child: Container(
               color: HexColor("E7E6E8"),
+              child: IndexedStack(index: 0, children: const [
+                OverviewScreen(),
+                OverviewScreen(),
+              ]),
             ),
           )
         ],
