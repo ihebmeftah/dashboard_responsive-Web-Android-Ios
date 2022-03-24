@@ -22,7 +22,7 @@ class Dashboardscreen extends StatelessWidget {
             Expanded(
               flex: 4,
               child: Container(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(15),
                 color: HexColor("E7E6E8"),
                 child: IndexedStack(index: controller.selcted, children: const [
                   OverviewScreen(),
