@@ -74,3 +74,21 @@ Widget customlisttilte({
       textColor: Colors.white,
       onTap: onTap,
     );
+
+Widget customlisttilteWithouttitle({
+  required IconData iconleading,
+  IconData? icontrailing,
+  Function()? onTap,
+}) =>
+    ListTile(
+      leading: Icon(
+        iconleading,
+        color: Colors.white,
+      ),
+      trailing: Icon(
+        icontrailing,
+        color: Colors.white,
+      ),
+      textColor: Colors.white,
+      onTap: onTap,
+    );

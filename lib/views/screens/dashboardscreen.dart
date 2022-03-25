@@ -13,30 +13,59 @@ class Dashboardscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: GetBuilder<Controller>(
-      init: Controller(),
-      builder: (controller) {
-        return Row(
-          children: [
-            menuSection(controller),
-            Expanded(
-              flex: 4,
-              child: Container(
-                padding: const EdgeInsets.all(15),
-                color: HexColor("E7E6E8"),
-                child: IndexedStack(index: controller.selcted, children: const [
-                  OverviewScreen(),
-                  Text("employee"),
-                  Text("tasks"),
-                  Text("message"),
-                  Text("setting"),
-                ]),
-              ),
+      appBar: MediaQuery.of(context).size.width <= 1131 ||
+              GetPlatform.isAndroid ||
+              GetPlatform.isIOS
+          ? AppBar(
+              backgroundColor: Colors.black,
             )
-          ],
-        );
-      },
-    ));
+          : null,
+      drawer: MediaQuery.of(context).size.width <= 1131 ||
+              GetPlatform.isAndroid ||
+              GetPlatform.isIOS
+          ? const Drawer()
+          : null,
+      body: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          // print(constraints.maxWidth.toInt());
+          return GetBuilder<Controller>(
+            init: Controller(),
+            builder: (controller) {
+              return Row(
+                children: [
+                  Visibility(
+                      visible:
+                          constraints.maxWidth.toInt() <= 1131 ? false : true,
+                      child: MediaQuery(
+                          data: constraints.maxWidth.toInt() <= 1288
+                              ? MediaQuery.of(context)
+                                  .copyWith(textScaleFactor: 0.7)
+                              : MediaQuery.of(context)
+                                  .copyWith(textScaleFactor: 1),
+                          child: menuSection(controller))),
+                  Expanded(
+                    flex: 4,
+                    child: Container(
+                      padding: const EdgeInsets.all(15),
+                      color: HexColor("E7E6E8"),
+                      child: IndexedStack(
+                          index: controller.selcted,
+                          children: const [
+                            OverviewScreen(),
+                            Text("employee"),
+                            Text("tasks"),
+                            Text("message"),
+                            Text("setting"),
+                          ]),
+                    ),
+                  )
+                ],
+              );
+            },
+          );
+        },
+      ),
+    );
   }
 }
 
