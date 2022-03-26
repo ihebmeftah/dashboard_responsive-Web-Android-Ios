@@ -11,39 +11,74 @@ class OverviewScreen extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          child: Column(
-            children: [
-              Wrap(
-                runSpacing: 10,
-                spacing: 10,
-                children: [
-                  Container(
-                      height: 140,
-                      width: 160,
-                      decoration: BoxDecoration(
-                        color: HexColor("ACD3FB"),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: const Center(child: Text("Overview"))),
-                  Container(
-                      height: 140,
-                      width: 160,
-                      decoration: BoxDecoration(
-                        color: HexColor("A5FDB4"),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: const Center(child: Text("Overview"))),
-                  Container(
-                      height: 140,
-                      width: 160,
-                      decoration: BoxDecoration(
-                        color: HexColor("BAACD5"),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: const Center(child: Text("Overview"))),
-                ],
-              ),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Wrap(
+                  runSpacing: 10,
+                  spacing: 20,
+                  children: [
+                    Container(
+                        height: 140,
+                        width: 160,
+                        decoration: BoxDecoration(
+                          color: HexColor("ACD3FB"),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: const Center(child: Text("Overview"))),
+                    Container(
+                        height: 140,
+                        width: 160,
+                        decoration: BoxDecoration(
+                          color: HexColor("A5FDB4"),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: const Center(child: Text("Overview"))),
+                    Container(
+                        height: 140,
+                        width: 160,
+                        decoration: BoxDecoration(
+                          color: HexColor("BAACD5"),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: const Center(child: Text("Overview"))),
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Wrap(
+                  runSpacing: 10,
+                  spacing: 20,
+                  children: [
+                    Container(
+                        height: 140,
+                        width: 160,
+                        decoration: BoxDecoration(
+                          color: HexColor("ACD3FB"),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: const Center(child: Text("Overview"))),
+                    Container(
+                        height: 140,
+                        width: 160,
+                        decoration: BoxDecoration(
+                          color: HexColor("A5FDB4"),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: const Center(child: Text("Overview"))),
+                    Container(
+                        height: 140,
+                        width: 160,
+                        decoration: BoxDecoration(
+                          color: HexColor("BAACD5"),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: const Center(child: Text("Overview"))),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
         const SizedBox(

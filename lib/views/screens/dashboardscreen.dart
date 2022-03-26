@@ -1,6 +1,5 @@
 import 'package:dashboard/controllers/controller.dart';
 import 'package:dashboard/views/screens/overviewScreen.dart';
-import 'package:dashboard/views/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -81,9 +80,10 @@ Widget menuSection(Controller cntrl) {
           children: [
             Column(
               children: [
-                Text(
-                  "Dash",
-                  style: ThemesApp().textinlightthemeforbgBlac,
+                Image.asset(
+                  'assets/logo.png',
+                  width: 100,
+                  height: 100,
                 ),
                 const SizedBox(
                   height: 40,
@@ -99,7 +99,7 @@ Widget menuSection(Controller cntrl) {
                   height: 10,
                 ),
                 customlisttilte(
-                    title: "Employees",
+                    title: "Players",
                     iconleading: Icons.person,
                     icontrailing: Icons.arrow_forward_ios,
                     onTap: () {
@@ -109,7 +109,7 @@ Widget menuSection(Controller cntrl) {
                   height: 10,
                 ),
                 customlisttilte(
-                    title: "Tasks",
+                    title: "Calendar",
                     iconleading: Icons.task,
                     icontrailing: Icons.arrow_forward_ios,
                     onTap: () {
@@ -119,7 +119,7 @@ Widget menuSection(Controller cntrl) {
                   height: 10,
                 ),
                 customlisttilte(
-                    title: "Message",
+                    title: "Schedule",
                     iconleading: Icons.message,
                     icontrailing: Icons.arrow_forward_ios,
                     onTap: () {
